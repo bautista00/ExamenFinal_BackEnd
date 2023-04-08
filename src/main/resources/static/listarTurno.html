@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Turnos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/Turno_js/getTurno.js"></script>
+    <script type="text/javascript" src="./js/Turno_js/putTurno.js"></script>
+    <script type="text/javascript" src="./js/Turno_js/deleteTurno.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/index.html">Clinica de Odontologia</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Odontologos
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/listarOdontologo.html">Listar odontologos</a>
+                    <a class="dropdown-item" href="/altaOdontologo.html">Agregar odontologos</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Pacientes
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/listarPaciente.html">Listar pacientes</a>
+                    <a class="dropdown-item" href="/altaPaciente.html">Agregar paciente</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Turnos
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/listarTurno.html">Listar turnos</a>
+                    <a class="dropdown-item" href="/altaTurno.html">Agregar turno</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div id="div_turno_table">
+        <h1>Turnos</h1>
+        <div class="row col-md-6 table-responsive">
+            <table id="turnosTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Paciente Id</th>
+                    <th>Odontologo Id</th>
+                    <th>Fecha</th>
+                </tr>
+                </thead>
+                <tbody id="turnosTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="col-sm-6 container" id="div_turno_updating" style="display:none">
+    <form class="container" id="update_turno_form">
+        <label >Turno ID</label>
+        <input type="text" class="form-control"  id="turno_id" readonly>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="paciente_id">Paciente</label>
+                <input type="text" class="form-control" id="paciente_id" placeholder="Paciente" required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="odontologo_id">Odontologo</label>
+                <input type="text" class="form-control" id="odontologo_id" placeholder="Odontologo" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha</label>
+            <input type="date" class="form-control" id="fecha" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Turno</button>
+    </form>
+</div>
+<div id="response" style="display:none; margin:10px"></div>
+</body>
+</html>
